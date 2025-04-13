@@ -21,7 +21,9 @@ FealtyX is a modern task management application designed for efficient team coll
 🚀 Live Demo
 URL:[ View Live ](https://fealtyx-one.vercel.app)
 
-Manager =>	manager1	password123  || Developer =>	shivam1	password123  or shivam2
+Manager =>	manager1	password123
+
+Developer =>	shivam1	password123  or shivam2
 
 Use only for testing.
 
