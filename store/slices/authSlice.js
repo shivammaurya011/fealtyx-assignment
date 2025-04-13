@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   user: null,
   token: null,
-  isAuthChecked: false, // New flag to track if auth state is restored
+  isAuthChecked: false,
 };
 
 const authSlice = createSlice({

@@ -12,12 +12,10 @@ export default function Header() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  // Ensure rendering only after client-side mount to avoid SSR mismatch
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // Render a minimal header during SSR or if user is not available
   if (!isMounted || !user) {
     return (
       <header className="fixed top-0 w-full z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-sm">

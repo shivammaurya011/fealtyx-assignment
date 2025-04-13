@@ -20,10 +20,8 @@ export default function Timer({ taskId, initialTime = 0 }) {
   const intervalRef = useRef(null);
   const prevIsRunningRef = useRef(isRunning);
 
-  // Find the task by ID to get its current status
   const task = tasks?.find((t) => t.id === taskId.toString());
 
-  // Sync localStorage with initialTime only if not set before
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem(`timer_${taskId}`);
@@ -33,7 +31,6 @@ export default function Timer({ taskId, initialTime = 0 }) {
     }
   }, [taskId, initialTime]);
 
-  // Timer interval logic
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
@@ -50,7 +47,6 @@ export default function Timer({ taskId, initialTime = 0 }) {
     return () => clearInterval(intervalRef.current);
   }, [isRunning, taskId]);
 
-  // Save time when timer is stopped
   const saveTime = useCallback(async () => {
     try {
       await updateTask({ id: taskId, timeLogged: time }).unwrap();
@@ -60,7 +56,6 @@ export default function Timer({ taskId, initialTime = 0 }) {
     }
   }, [taskId, time, updateTask]);
 
-  // Update task status to "In Progress" when timer starts
   const updateStatusToInProgress = useCallback(async () => {
     if (task?.status !== 'In Progress') {
       try {
@@ -72,19 +67,15 @@ export default function Timer({ taskId, initialTime = 0 }) {
     }
   }, [taskId, task?.status, updateTask]);
 
-  // Detect timer start/stop events
   useEffect(() => {
     if (!prevIsRunningRef.current && isRunning) {
-      // Timer started: Update status to "In Progress"
       updateStatusToInProgress();
     } else if (prevIsRunningRef.current && !isRunning && time !== initialTime) {
-      // Timer stopped: Save time
       saveTime();
     }
     prevIsRunningRef.current = isRunning;
   }, [isRunning, saveTime, time, initialTime, updateStatusToInProgress]);
 
-  // Auto-save time when window/tab is closed
   useEffect(() => {
     const handleBeforeUnload = () => {
       if (isRunning) {
@@ -95,7 +86,6 @@ export default function Timer({ taskId, initialTime = 0 }) {
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [isRunning, taskId, time]);
 
-  // Toggle play/pause
   const handleToggle = () => {
     setIsRunning((prev) => !prev);
   };

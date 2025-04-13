@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "username": "dev1",
+    "username": "shivam1",
     "password": "password123",
     "role": "developer",
     "name": "Shivam Maurya"
@@ -15,9 +15,9 @@
   },
   {
     "id": 3,
-    "username": "dev2",
+    "username": "shivam2",
     "password": "password123",
     "role": "developer",
-    "name": "Sudharak Verma"
+    "name": "Sudhakar Verma"
   }
 ]

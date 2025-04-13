@@ -29,11 +29,9 @@ export default function TaskList({ role, assignee, status }) {
     }
 
     return [...result].sort((a, b) => {
-      // Prioritize non-Closed tasks
       if (a.status === 'Closed' && b.status !== 'Closed') return 1;
       if (b.status === 'Closed' && a.status !== 'Closed') return -1;
 
-      // Within Closed or non-Closed, sort by dueDate or title
       if (filters.sortBy === 'dueDate') {
         return new Date(a.dueDate) - new Date(b.dueDate);
       }

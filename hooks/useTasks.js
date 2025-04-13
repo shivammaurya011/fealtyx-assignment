@@ -2,7 +2,7 @@ import { useGetTasksQuery, useCreateTaskMutation, useUpdateTaskMutation, useDele
 
 export const useTasks = () => {
   const { data: tasks, isLoading, error, refetch } = useGetTasksQuery(undefined, {
-    pollingInterval: 60000, // Refresh every minute
+    pollingInterval: 60000, 
   });
   const [createTask] = useCreateTaskMutation();
   const [updateTask] = useUpdateTaskMutation();
