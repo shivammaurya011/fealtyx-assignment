@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb; /* Light mode bg-gray-50 */
+  --foreground: #111827; /* Light mode text-gray-900 */
+  --primary: #3b82f6; /* Blue-500 */
+  --primary-dark: #2563eb; /* Blue-600 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0f172a; /* Dark mode bg-slate-900 */
+  --foreground: #e5e7eb; /* Dark mode text-gray-200 */
+  --primary: #60a5fa; /* Blue-400 */
+  --primary-dark: #3b82f6; /* Blue-500 */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300 font-sans antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-[var(--primary)] ring-offset-2;
 }

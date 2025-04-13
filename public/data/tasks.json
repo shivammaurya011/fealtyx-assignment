@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Fix login bug",
+    "description": "Login fails with invalid credentials",
+    "priority": "High",
+    "status": "Open",
+    "assignee": "dev1",
+    "startDate": "2025-04-10",
+    "dueDate": "2025-04-15",
+    "timeLogged": 3600,
+    "tags": ["bug", "frontend"]
+  },
+  {
+    "id": 2,
+    "title": "Add dark mode",
+    "description": "Implement dark mode toggle",
+    "priority": "Medium",
+    "status": "In Progress",
+    "assignee": "dev1",
+    "startDate": "2025-04-11",
+    "dueDate": "2025-04-20",
+    "timeLogged": 7200,
+    "tags": ["feature"]
+  },
+  {
+    "id": 3,
+    "title": "Database optimization",
+    "description": "Optimize query performance",
+    "priority": "Low",
+    "status": "Pending Approval",
+    "assignee": "dev2",
+    "startDate": "2025-04-08",
+    "dueDate": "2025-04-18",
+    "timeLogged": 10800,
+    "tags": ["backend"]
+  },
+  {
+    "id": 4,
+    "title": "UI bug",
+    "description": "Button alignment issue",
+    "priority": "High",
+    "status": "Closed",
+    "assignee": "dev1",
+    "startDate": "2025-04-05",
+    "dueDate": "2025-04-10",
+    "timeLogged": 5400,
+    "tags": ["bug", "frontend"]
+  }
+]

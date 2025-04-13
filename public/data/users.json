@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "username": "dev1",
+    "password": "password123",
+    "role": "developer",
+    "name": "Shivam Maurya"
+  },
+  {
+    "id": 2,
+    "username": "manager1",
+    "password": "password123",
+    "role": "manager",
+    "name": "Satyam Mishra"
+  },
+  {
+    "id": 3,
+    "username": "dev2",
+    "password": "password123",
+    "role": "developer",
+    "name": "Sudharak Verma"
+  }
+]
