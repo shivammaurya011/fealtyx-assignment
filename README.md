@@ -25,7 +25,6 @@ Manager =>	manager1	password123
 
 Developer =>	shivam1	password123  or shivam2
 
-Use only for testing.
 
 [
   {
